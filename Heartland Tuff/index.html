@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartland Synthetic Turf | Premium Sports Surfaces</title>
+    <style>
+        /* Base styles */
+        :root {
+            --primary: #006241; /* Dark green from logo */
+            --accent: #8BC34A;  /* Light green from logo */
+            --black: #000000;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            color: var(--black);
+            line-height: 1.5;
+            background-color: var(--white);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            padding: 80px 0;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+        
+        .hero-image {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background-color: var(--primary);
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .hero-image h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .hero-image p {
+            font-size: 1.1rem;
+            max-width: 300px;
+        }
+        
+        /* CTA Button */
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 18px 40px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            background-color: var(--accent);
+        }
+        
+        /* Value proposition section */
+        .value-props {
+            padding: 100px 0;
+            background-color: var(--light-color);
+            color: var(--primary);
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-card {
+            border: 2px solid var(--accent);
+            padding: 40px 30px;
+            text-align: center;
+            background-color: var(--white);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+        
+        /* Contrast block */
+        .contrast-block {
+            padding: 120px 0;
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .contrast-block h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.2;
+        }
+        
+        /* Form section */
+        .form-section {
+            padding: 100px 0;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 2px solid var(--black);
+            padding: 40px;
+        }
+        
+        .form-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .form-title h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer img {
+            filter: brightness(0) invert(1); /* Makes logo white in footer */
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-content p {
+            margin: 5px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contrast-block h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Premium Synthetic Turf</h1>
+                    <p>Specialized sports turf solutions for athletic facilities. Custom-cut to your exact specifications for optimal performance and durability.</p>
+                    <a href="#contact-form" class="cta-btn">Get Started</a>
+                </div>
+                <div class="hero-image">
+                    <h2>Surface Quality = Athlete Performance</h2>
+                    <p>The right turf makes all the difference</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Us Section -->
+    <section class="about-section" style="padding: 50px 0; background-color: var(--white);">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase; color: var(--primary); margin-bottom: 25px;">About Us</h2>
+                <p style="margin-bottom: 15px; font-size: 1.1rem;">Heartland Synthetic Turf specializes in providing premium quality synthetic turf products for sports facilities and athletic fields across the region. As product specialists, we focus exclusively on helping you find the perfect turf solution for your specific needs.</p>
+                <p style="font-size: 1.1rem; font-weight: 500;"><span style="color: var(--primary);">Please Note:</span> We are product specialists, not installers. We concentrate on sourcing and supplying the highest quality synthetic turf, allowing us to provide expert guidance on product selection. Custom cut to precise measurements for your facility. Every inch matters for performance.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contrast Block -->
+    <section class="contrast-block">
+        <div class="container">
+            <h2>Natural Appearance.<br>Synthetic Advantage.</h2>
+        </div>
+    </section>
+    
+    <!-- Form Section -->
+    <section class="form-section" id="contact-form">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-title">
+                    <h2>Request Information</h2>
+                    <p>Tell us about your project for a custom solution</p>
+                </div>
+                <form id="contact-form" action="https://formsubmit.co/heartlandsyntheticturfllc@gmail.com" method="POST">
+                    <!-- FormSubmit.co configuration -->
+                    <input type="hidden" name="_subject" value="New Inquiry from Heartland Synthetic Turf Website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                    
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project-type">Project Type</label>
+                        <select id="project-type" name="project-type">
+                            <option value="">Select an option</option>
+                            <option value="football">Football Field</option>
+                            <option value="soccer">Soccer Field</option>
+                            <option value="baseball">Baseball/Softball Field</option>
+                            <option value="multi-sport">Multi-Sport Facility</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Current Needs *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="cta-btn" style="width: 100%;">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- You'll need to replace this with the actual path to your logo file after uploading -->
+                <img src="logo.png" alt="Heartland Synthetic Turf Logo" style="max-width: 200px;">
+                <p>Email: heartlandsyntheticturfllc@gmail.com</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>&copy; 2025 Heartland Synthetic Turf. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Normally, you would use a backend service or API to send emails
+            // Since this is a static site, we'll simulate the email sending with a form submission
+            
+            // For production, you would replace this with actual email sending code or a form service
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const projectType = document.getElementById('project-type').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real implementation, you would send this data to a server
+            // or email service that would forward it to heartlandsyntheticturfllc@gmail.com
+            
+            // For now, we'll show a success message
+            alert('Thank you for your inquiry! Your information will be sent to heartlandsyntheticturfllc@gmail.com. We will get back to you soon.');
+            
+            // Reset the form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
